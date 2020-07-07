@@ -1,6 +1,7 @@
 class UpdatesController < ApplicationController
   def index
-    # @update = Update.new
+    @update = Update.all.reverse_order
+    # @update = 
   end
 
   def new
