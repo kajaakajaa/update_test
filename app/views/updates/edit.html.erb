@@ -1,2 +1,13 @@
-<h1>Updates#edit</h1>
-<p>Find me in app/views/updates/edit.html.erb</p>
+<table border="1">
+  <tr>
+    <th>年齢</th>
+    <td><%= @update.age %></td>
+  </tr>
+</table>
+
+<p>一言あいさつ</p>
+  <%= form_with(model: @update, local: true) do |f| %>
+    <%= f.label :contents, :本文 %>
+    <%= f.text_field :contents %>
+    <%= f.submit :send %>
+  <% end %>
