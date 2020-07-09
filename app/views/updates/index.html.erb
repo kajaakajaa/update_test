@@ -12,3 +12,12 @@
     <% end %>
   </ul> 
 </div>
+
+<div>
+  <%= form_with(model: @test, local: true) do |f| %>
+    <%= f.label :name, :Name %>
+    <%= f.text_field :name %>
+
+    <%= f.submit :test_send %>
+  <% end %>
+</div>
