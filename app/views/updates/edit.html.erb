@@ -1,7 +1,0 @@
-<p>一言あいさつ</p>
-
-  <%= form_with(model: @update, local: true) do |f| %>
-    <%= f.label :contents, :本文 %>
-    <%= f.text_field :contents %>
-    <%= f.submit :send %>
-  <% end %>
