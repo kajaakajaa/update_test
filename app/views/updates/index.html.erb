@@ -1,17 +1,24 @@
-<h1>Top</h1>
+<!-- 新規登録 ↓ -->
+<div>
+  <%= form_with(model:@update, local:true) do |f| %>
+    <%= f.label :name, :Name %>
+    <%= f.text_field :name %>
 
-<%= link_to "新規登録", new_update_path %>
+    <%= f.label :contents, :Contents %>
+    <%= f.text_field :contents %>
 
+    <%= f.submit :送信 %>
+  <% end %>
+</div>
+<!-- 表示 ↓ -->
 <div>
   <ul>
-    <% @update.each do |update| %>
+    <% @show.each do |update| %>
       <table border="1">
         <tr>
           <li id="update_li">
             <th>名前</th>
-              <td><%= link_to update.name, edit_update_path(update) %></td>
-            <th>年齢</th>
-              <td><%= update.age %></td>
+              <td><%= update.name %></td>
             <th>本文</th>
               <td><%= update.contents %></td>
           </li>
@@ -20,4 +27,9 @@
     <% end %>
   </ul> 
 </div>
+<!-- 編集・更新 ↓ -->
+<div>
+  <form action="">
 
+  </form>
+</div>
