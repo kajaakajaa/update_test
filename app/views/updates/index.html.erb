@@ -1,5 +1,5 @@
 <!-- 新規登録 ↓ -->
-<div class="contents">
+<div id="post">
   <%= form_with(model:@update, local:true) do |f| %>
     <p>
       <%= f.label :name, :Name %>
@@ -13,23 +13,29 @@
   <% end %>
 </div>
 <!-- 表示 ↓ -->
-<div class="contents" id="post">
-  <ul>
-    <% @show.each do |update| %>
-      <table border="1">
-        <tr>
-          <li id="update_li">
-            <th>名前</th>
-              <td><%= update.name %></td>
-            <th>本文</th>
-              <td>
-                <input type="text" value="<%= update.contents %>" >
-              </td>
-          </li>
-        </tr>
-      </table>
-    <% end %>
-  </ul> 
+<h2>一言コメント</h2>
+
+<div id="contents">
+  <table border="1">
+    <form action="/updates" accept-charset="UTF-8" method="post">
+      <input type="hidden" name="_method" value="patch">
+        <% @show.each do |update| %>
+          <tr>
+            <ul>
+              <li id="update_li">
+                <th>名前</th>
+                  <td><%= update.name %></td>
+                <th>本文</th>
+                  <td>
+                    <input type="text" name="updates[<%= update.id %>]" value="<%= update.contents %>" >
+                  </td>
+              </li>
+            </ul>
+          </tr>
+        <% end %>
+      <input type="submit" name="commit" value="更新" data-disable-with="更新中..">
+    </form>
+  </table>
 </div>
 <!-- 編集・更新 ↓ -->
 <div>

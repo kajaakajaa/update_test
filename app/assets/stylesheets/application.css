@@ -14,7 +14,7 @@
  *= require_self
  */
 
-.contents {
+#post {
   width: 400px;
   margin: 50px auto;
 }
@@ -27,4 +27,18 @@ input[type="text"], textarea {
 
 textarea {
   height: 150px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+}
+
+#contents {
+  width: 400px;
+  margin: 20px auto;
+}
+
+td, th {
+  white-space: nowrap;
 }
