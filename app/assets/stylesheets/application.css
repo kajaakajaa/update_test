@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+.contents {
+  width: 400px;
+  margin: 50px auto;
+}
+
+input[type="text"], textarea {
+  box-sizing: border-box;
+  width: 400px;
+  padding: 5px;
+}
+
+textarea {
+  height: 150px;
+}
