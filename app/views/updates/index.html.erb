@@ -1,17 +1,19 @@
 <!-- 新規登録 ↓ -->
-<div>
+<div class="contents">
   <%= form_with(model:@update, local:true) do |f| %>
-    <%= f.label :name, :Name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :contents, :Contents %>
-    <%= f.text_field :contents %>
-
-    <%= f.submit :送信 %>
+    <p>
+      <%= f.label :name, :Name %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :contents, :Contents %>
+      <%= f.text_area :contents %>
+    </P>
+      <%= f.submit :送信 %>
   <% end %>
 </div>
 <!-- 表示 ↓ -->
-<div>
+<div class="contents" id="post">
   <ul>
     <% @show.each do |update| %>
       <table border="1">
@@ -20,7 +22,9 @@
             <th>名前</th>
               <td><%= update.name %></td>
             <th>本文</th>
-              <td><%= update.contents %></td>
+              <td>
+                <input type="text" value="<%= update.contents %>" >
+              </td>
           </li>
         </tr>
       </table>
